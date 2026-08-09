@@ -1,8 +1,20 @@
+
 import re
 import nltk
 
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+
+# Download required NLTK resources
+try:
+    nltk.data.find("tokenizers/punkt_tab")
+except LookupError:
+    nltk.download("punkt_tab")
+
+try:
+    nltk.data.find("corpora/wordnet")
+except LookupError:
+    nltk.download("wordnet")
 
 lemmatizer = WordNetLemmatizer()
 
@@ -21,3 +33,4 @@ def clean_text(text):
     ]
 
     return words
+
