@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College AI Helpdesk</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #172554;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .chat-box {
+            height: 500px;
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 18px;
+            display: flex;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .bubble {
+            max-width: 70%;
+            padding: 13px 17px;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        .bot .bubble {
+            background: #eef2ff;
+            color: #1e293b;
+            border-bottom-left-radius: 3px;
+        }
+
+        .user .bubble {
+            background: #2563eb;
+            color: white;
+            border-bottom-right-radius: 3px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 18px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .input-area input:focus {
+            border-color: #2563eb;
+        }
+
+        .input-area button {
+            padding: 14px 24px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .input-area button:hover {
+            background: #1d4ed8;
+        }
+
+        .status {
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            .bubble {
+                max-width: 85%;
+            }
+
+            .input-area button {
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>College AI Helpdesk</h1>
+        <p>Ask questions about your college campus</p>
+    </div>
+
+    <div class="chat-container">
+
+        <div class="chat-box" id="chatBox">
+            <div class="message bot">
+                <div class="bubble">
+                    Hello! 👋 I'm your College AI Helpdesk.<br>
+                    How can I help you today?
+                </div>
+            </div>
+        </div>
+
+        <div class="status" id="status">
+            AI Assistant Online
+        </div>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask something..."
+                onkeypress="handleKeyPress(event)"
+            >
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        async function sendMessage() {
+
+            const input = document.getElementById("userInput");
+            const message = input.value.trim();
+
+            if (message === "") {
+                return;
+            }
+
+            addMessage(message, "user");
+
+            input.value = "";
+
+            document.getElementById("status").innerText = "AI is thinking...";
+
+            try {
+
+                const response = await fetch("http://127.0.0.1:5000/api/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        message: message
+                    })
+                });
+
+                const data = await response.json();
+
+                addMessage(data.response, "bot");
+
+                document.getElementById("status").innerText =
+    "AI Assistant Online";
+
+            } catch (error) {
+
+                console.error(error);
+
+                addMessage(
+                    "Sorry, I couldn't connect to the AI server. Please make sure Flask is running.",
+                    "bot"
+                );
+
+                document.getElementById("status").innerText =
+                    "Connection error";
+            }
+        }
+
+        function addMessage(text, sender) {
+
+            const chatBox = document.getElementById("chatBox");
+
+            const messageDiv = document.createElement("div");
+            messageDiv.className = "message " + sender;
+
+            const bubble = document.createElement("div");
+            bubble.className = "bubble";
+
+            bubble.innerText = text;
+
+            messageDiv.appendChild(bubble);
+            chatBox.appendChild(messageDiv);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

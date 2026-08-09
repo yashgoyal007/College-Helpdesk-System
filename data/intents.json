@@ -1,0 +1,315 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Is anyone there?",
+        "Hi there",
+        "Can you help me?"
+      ],
+      "responses": [
+        "Hello! How can I help you with college-related information?",
+        "Hi! What would you like to know about the college?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you",
+        "Thank you bye",
+        "I have to go",
+        "See you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day.",
+        "See you again!"
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "How much are the college fees?",
+        "Tell me about the fees",
+        "How much is the tuition fee?",
+        "What are the semester fees?",
+        "How can I pay my fees?",
+        "What is the semester fee?",
+        "How much do I have to pay?"
+      ],
+      "responses": [
+        "The latest fee structure can be checked through the college administration or student portal.",
+        "Please check the student portal or contact the accounts department for the current fee details."
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": [
+        "How can I get admission?",
+        "What is the admission process?",
+        "How do I apply for admission?",
+        "Tell me about admissions",
+        "What documents are required for admission?",
+        "When does admission start?",
+        "How can I apply to the college?",
+        "What are the admission requirements?"
+      ],
+      "responses": [
+        "Admission requirements and dates depend on the course. Please check the official college admission notice.",
+        "You can contact the admission department for the latest admission information."
+      ]
+    },
+    {
+      "tag": "exams",
+      "patterns": [
+        "When are the exams?",
+        "When will exams start?",
+        "Tell me about exam dates",
+        "Where can I find the exam schedule?",
+        "When is the next semester exam?",
+        "What is the exam timetable?",
+        "When are semester exams?",
+        "Where can I check exam dates?"
+      ],
+      "responses": [
+        "You can check the latest examination schedule through the student portal or examination department.",
+        "The examination timetable is usually published by the examination department."
+      ]
+    },
+    {
+      "tag": "attendance",
+      "patterns": [
+        "What is the attendance requirement?",
+        "How much attendance is required?",
+        "What happens if my attendance is low?",
+        "Tell me about attendance rules",
+        "How is attendance calculated?",
+        "Can I sit for exams with low attendance?",
+        "What is the minimum attendance?",
+        "How much attendance do I need?"
+      ],
+      "responses": [
+        "Attendance requirements depend on the college rules. Please check your academic regulations or contact your department.",
+        "If your attendance is low, contact your department to understand the applicable rules."
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "Where is the library?",
+        "What are the library timings?",
+        "When does the library open?",
+        "Can students borrow books?",
+        "How many books can I issue?",
+        "Tell me about the library",
+        "When does the library close?",
+        "How can I issue a book?"
+      ],
+      "responses": [
+        "The library provides books and study resources for students. Please check the library notice for current timings and borrowing rules.",
+        "You can contact the library staff for information about timings and book issue limits."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "Is hostel available?",
+        "How much does the hostel cost?",
+        "Tell me about hostel facilities",
+        "What are the hostel fees?",
+        "How can I apply for hostel?",
+        "Are hostel rooms available?",
+        "Is hostel accommodation available?",
+        "How do I get a hostel room?"
+      ],
+      "responses": [
+        "Hostel availability and fees depend on the current college policy. Please contact the hostel administration for details.",
+        "You can contact the hostel office for information about rooms, fees and facilities."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": [
+        "Tell me about placements",
+        "What companies visit the college?",
+        "How does the placement process work?",
+        "When do placements start?",
+        "Where can I find placement information?",
+        "Is there a placement cell?",
+        "What companies come for placements?",
+        "How can I get placement information?"
+      ],
+      "responses": [
+        "The placement cell manages campus recruitment activities and company opportunities.",
+        "For current placement opportunities, check the placement cell notices or student placement portal."
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "What courses are available?",
+        "Which courses does the college offer?",
+        "Tell me about the courses",
+        "What programs are available?",
+        "Which degree programs are offered?",
+        "What can I study here?",
+        "Which degrees are available?",
+        "What programs does the college offer?"
+      ],
+      "responses": [
+        "The college offers different programs depending on the department. Please check the official course list for current programs."
+      ]
+    },
+    {
+      "tag": "departments",
+      "patterns": [
+        "What departments are there?",
+        "Tell me about the departments",
+        "Which departments does the college have?",
+        "Where can I find the departments?",
+        "What academic departments are available?",
+        "Which branches are available?",
+        "What academic branches are there?"
+      ],
+      "responses": [
+        "You can find the list of academic departments on the college website or administration office."
+      ]
+    },
+    {
+      "tag": "scholarship",
+      "patterns": [
+        "Are scholarships available?",
+        "How can I apply for a scholarship?",
+        "Tell me about scholarships",
+        "Who can get a scholarship?",
+        "What are the scholarship requirements?",
+        "Is there financial aid?",
+        "Can I get a scholarship?",
+        "How do scholarships work?"
+      ],
+      "responses": [
+        "Scholarship eligibility depends on the scholarship program. Please contact the scholarship or student welfare office for current information."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How can I contact the college?",
+        "What is the college contact number?",
+        "Where can I find contact information?",
+        "How do I contact administration?",
+        "Give me the college contact details",
+        "What is the college phone number?",
+        "How can I contact administration?"
+      ],
+      "responses": [
+        "You can find the latest contact information on the official college website or contact the administration office."
+      ]
+    },
+    {
+      "tag": "results",
+      "patterns": [
+        "When will results be released?",
+        "Where can I check my results?",
+        "How do I check exam results?",
+        "Tell me about results",
+        "When are semester results announced?",
+        "When will semester results come?",
+        "Where are exam results published?"
+      ],
+      "responses": [
+        "Semester results are generally published through the student portal or examination department."
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "What events are happening?",
+        "Are there any college events?",
+        "Tell me about college events",
+        "When is the next college event?",
+        "Are there student activities?",
+        "What events are coming?",
+        "Are there any student activities?"
+      ],
+      "responses": [
+        "You can check the college notice board or student portal for upcoming events and activities."
+      ]
+    },
+    {
+      "tag": "canteen",
+      "patterns": [
+        "Where is the canteen?",
+        "What are the canteen timings?",
+        "Is the canteen open?",
+        "Tell me about the college canteen",
+        "Where can I get food on campus?",
+        "Where can I eat on campus?",
+        "When does the canteen open?"
+      ],
+      "responses": [
+        "The college canteen provides food and refreshments to students. Check the campus notice board for current timings."
+      ]
+    },
+    {
+      "tag": "holiday",
+      "patterns": [
+        "When is the next holiday?",
+        "What are the college holidays?",
+        "Tell me about the holiday schedule",
+        "Is there a holiday tomorrow?",
+        "Where can I find the holiday list?",
+        "When is the next college holiday?",
+        "What is the holiday schedule?"
+      ],
+      "responses": [
+        "You can check the latest academic calendar or holiday list for official information."
+      ]
+    },
+    {
+      "tag": "classrooms",
+      "patterns": [
+        "Where are the classrooms?",
+        "Where can I find my classroom?",
+        "How do I find my classroom?",
+        "Where is my class?",
+        "Where are the lecture rooms?",
+        "How can I locate my classroom?",
+        "Where are classes held?",
+        "I cannot find my classroom",
+        "Where is my lecture room?",
+        "How do I locate my class?"
+      ],
+      "responses": [
+        "You can check your timetable for the assigned classroom and use the campus map to locate the building.",
+        "Please check your timetable for the classroom number and campus map for the building location."
+      ]
+    },
+    {
+      "tag": "timings",
+      "patterns": [
+        "What are the college timings?",
+        "What are the college hours?",
+        "What time does the college start?",
+        "What time does the college close?",
+        "When does college start?",
+        "When does college end?",
+        "What are the working hours of the college?",
+        "What time are college classes?",
+        "What is the college schedule?",
+        "Tell me the college timings"
+      ],
+      "responses": [
+        "College timings may vary by course and schedule. Please check the latest timetable or college notice for current timings.",
+        "You can check the academic timetable or contact the college administration for the current working hours."
+      ]
+    }
+  ]
+}
