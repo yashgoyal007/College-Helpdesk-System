@@ -6,8 +6,10 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 
-# Use a fixed NLTK data folder inside the Render project
-NLTK_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "nltk_data")
+NLTK_DATA_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)),
+    "nltk_data"
+)
 
 os.makedirs(NLTK_DATA_DIR, exist_ok=True)
 
@@ -15,7 +17,6 @@ if NLTK_DATA_DIR not in nltk.data.path:
     nltk.data.path.insert(0, NLTK_DATA_DIR)
 
 
-# Check required NLTK resources
 try:
     nltk.data.find("tokenizers/punkt_tab")
 except LookupError:
